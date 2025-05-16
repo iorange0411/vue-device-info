@@ -1,6 +1,6 @@
 {
   "name": "vue-device-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue component for detecting device information。Vue 项目判断设备信息组件",
   "main": "dist/vue-device-info.umd.js",
   "module": "dist/vue-device-info.es.js",
