@@ -1,0 +1,47 @@
+{
+  "name": "vue-device-info",
+  "version": "1.0.0",
+  "description": "A Vue component for detecting device information",
+  "main": "dist/vue-device-info.umd.js",
+  "module": "dist/vue-device-info.es.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vue",
+    "device",
+    "detection",
+    "component",
+    "wechat",
+    "miniprogram",
+    "browser"
+  ],
+  "author": "h2orange@foxmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iorange0411/vue-device-info.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iorange0411/vue-device-info/issues"
+  },
+  "homepage": "https://github.com/iorange0411/vue-device-info#readme",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^4.4.5",
+    "vue": "^3.3.4",
+    "vue-tsc": "^2.2.10"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}

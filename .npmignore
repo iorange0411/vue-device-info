@@ -1,0 +1,23 @@
+# 开发文件
+.vscode
+.idea
+*.log
+*.local
+
+# 依赖目录
+node_modules
+
+# 构建文件
+dist-ssr
+*.local
+
+# 测试文件
+__tests__
+*.test.js
+*.spec.js
+
+# 其他
+.DS_Store
+.env
+.env.*
+!.env.example 
