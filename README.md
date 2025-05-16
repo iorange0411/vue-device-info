@@ -67,10 +67,10 @@ export default {
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { computed } from 'vue'
 import { getDeviceInfo } from 'vue-device-info'
 
-const deviceInfo = ref(getDeviceInfo())
+const deviceInfo = computed(()=>getDeviceInfo())
 </script>
 ```
 
