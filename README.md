@@ -1,6 +1,6 @@
 # Vue Device Info
 
-一个用于检测设备信息的 Vue 3 组件库。
+一个用于检测设备信息的工具库，支持 Vue2 和 Vue3。
 
 ## 功能特点
 
@@ -10,9 +10,7 @@
 - 检测浏览器信息（Chrome、Firefox、Safari、Edge、IE、Opera、QQ浏览器、UC浏览器）
 - 检测微信环境（微信浏览器、微信小程序）
 - 检测其他小程序环境（支付宝、百度、头条、QQ、京东）
-- 响应式更新
 - TypeScript 支持
-- 支持自定义模板
 
 ## 安装
 
@@ -22,56 +20,58 @@ npm install vue-device-info
 
 ## 使用方法
 
-### 全局注册
-
-```typescript
-import { createApp } from 'vue'
-import App from './App.vue'
-import VueDeviceInfo from 'vue-device-info'
-
-const app = createApp(App)
-app.use(VueDeviceInfo)
-app.mount('#app')
-```
-
-### 局部注册
-
-```typescript
-import { DeviceInfo } from 'vue-device-info'
-
-export default {
-  components: {
-    DeviceInfo
-  }
-}
-```
-
-### 在模板中使用
-
-```vue
-<template>
-  <!-- 使用默认模板 -->
-  <device-info />
-
-  <!-- 使用自定义模板 -->
-  <device-info v-slot="{ deviceInfo }">
-    <div>
-      <p>设备类型: {{ deviceInfo.deviceType }}</p>
-      <p>操作系统: {{ deviceInfo.os }}</p>
-      <p>浏览器: {{ deviceInfo.browser }}</p>
-      <p>小程序环境: {{ deviceInfo.miniProgramType }}</p>
-    </div>
-  </device-info>
-</template>
-```
-
-### 直接使用工具函数
+### 基本使用
 
 ```typescript
 import { getDeviceInfo } from 'vue-device-info'
 
 const deviceInfo = getDeviceInfo()
 console.log(deviceInfo)
+```
+
+### Vue 组件中使用
+
+```vue
+<template>
+  <div>
+    <p>设备类型: {{ deviceInfo.deviceType }}</p>
+    <p>操作系统: {{ deviceInfo.os }}</p>
+    <p>浏览器: {{ deviceInfo.browser }}</p>
+    <p>小程序环境: {{ deviceInfo.miniProgramType }}</p>
+  </div>
+</template>
+
+<script>
+import { getDeviceInfo } from 'vue-device-info'
+
+export default {
+  data() {
+    return {
+      deviceInfo: getDeviceInfo()
+    }
+  }
+}
+</script>
+```
+
+### Vue3 Composition API 中使用
+
+```vue
+<template>
+  <div>
+    <p>设备类型: {{ deviceInfo.deviceType }}</p>
+    <p>操作系统: {{ deviceInfo.os }}</p>
+    <p>浏览器: {{ deviceInfo.browser }}</p>
+    <p>小程序环境: {{ deviceInfo.miniProgramType }}</p>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { getDeviceInfo } from 'vue-device-info'
+
+const deviceInfo = ref(getDeviceInfo())
+</script>
 ```
 
 ## 设备信息对象

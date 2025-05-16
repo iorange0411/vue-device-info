@@ -36,12 +36,14 @@
   "homepage": "https://github.com/iorange0411/vue-device-info#readme",
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
+    "terser": "^5.39.2",
     "typescript": "^5.8.3",
     "vite": "^4.4.5",
+    "vite-plugin-dts": "^4.5.4",
     "vue": "^3.3.4",
     "vue-tsc": "^2.2.10"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": ">=2.0.0 || >=3.0.0"
   }
 }
